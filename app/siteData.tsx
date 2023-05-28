@@ -19,7 +19,7 @@ export const siteData = {
     {
       label: '_home',
       path: '/',
-      targetSegment: '(mainPage)',
+      targetSegment: null,
     },
     {
       label: '_about-me',

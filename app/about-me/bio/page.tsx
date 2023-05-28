@@ -1,4 +1,4 @@
-export default function AboutMe() {
+export default function Bio() {
   return (
     <>
       <aside className="hidden w-78 lg:flex">aside</aside>

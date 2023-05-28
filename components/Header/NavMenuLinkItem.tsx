@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useSelectedLayoutSegments } from 'next/navigation'
+import { useSelectedLayoutSegment } from 'next/navigation'
 import { cva } from 'class-variance-authority'
 
 import { useToggleMenu } from '@/hooks/useToggleMenu'
@@ -34,12 +34,10 @@ type Props = {
 }
 
 export default function NavMenuLinkItem({ label, path, targetSegment }: Props) {
-  const segments = useSelectedLayoutSegments()
+  const segments = useSelectedLayoutSegment()
   const toggle = useToggleMenu().toggle
-  // const active = activeSegment[0] === targetSegment
-  const active =
-    segments.filter((segment) => segment === targetSegment).length > 0
-  console.log(segments, targetSegment)
+  const active = segments === targetSegment
+
   return (
     <Link
       className={navLink({ active })}
