@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 dependencies:
   '@types/node':
@@ -66,6 +70,9 @@ devDependencies:
   prettier-plugin-tailwindcss:
     specifier: ^0.3.0
     version: 0.3.0(@ianvs/prettier-plugin-sort-imports@4.0.0)(prettier@2.8.8)
+  tailwind-scrollbar:
+    specifier: ^3.0.4
+    version: 3.0.4(tailwindcss@3.3.2)
   tailwindcss-hocus:
     specifier: ^0.0.7
     version: 0.0.7(tailwindcss@3.3.2)
@@ -2854,6 +2861,15 @@ packages:
   /tailwind-merge@1.12.0:
     resolution: {integrity: sha512-Y17eDp7FtN1+JJ4OY0Bqv9OA41O+MS8c1Iyr3T6JFLnOgLg3EvcyMKZAnQ8AGyvB5Nxm3t9Xb5Mhe139m8QT/g==}
     dev: false
+
+  /tailwind-scrollbar@3.0.4(tailwindcss@3.3.2):
+    resolution: {integrity: sha512-X/QBsn/C5u9x6/YvTc1Zo7b09Gqs5BfDe0UK/8LDQUv8IEBKF+p2ISTRwvAr50MH0hn/wTyCEOann7uXoa1/2Q==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      tailwindcss: 3.x
+    dependencies:
+      tailwindcss: 3.3.2
+    dev: true
 
   /tailwindcss-hocus@0.0.7(tailwindcss@3.3.2):
     resolution: {integrity: sha512-KY3jLlppAoPkCLRhDqbe503c1Ryq//G1bLQqFCZz1pnB0JFzHa3VK0bXvjTa8n/dwCxgkhi5uJm1d6gp8OzPhw==}
