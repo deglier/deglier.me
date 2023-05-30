@@ -53,6 +53,12 @@ module.exports = {
       minHeight: {
         'screen-adjusted': 'calc(var(--vh, 1vh) * 100)',
       },
+      margin: {
+        78: '19.5rem',
+      },
+      padding: {
+        21: '5.25rem',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
