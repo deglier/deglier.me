@@ -15,6 +15,10 @@ export const siteData = {
   description:
     'Front-end engineering and web developer based in Rio de Janeiro, Brazil. Working on projects from the beginning to the end.',
   role: 'Front-end developer',
+  heroConst: {
+    key: 'githubLink',
+    value: 'https://github.com/degliersa',
+  },
   links: [
     {
       label: '_home',

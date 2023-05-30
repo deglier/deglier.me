@@ -10,19 +10,22 @@ import favicon from './icon.png'
 export default function Home() {
   return (
     <>
-      <div className="flex h-full">
+      <div className="row-span-2 flex h-full lg:row-span-1">
         {/* lg:blur-[100px]" */}
         {/* blur-[50px] */}
-        <main className="relative flex flex-1 items-center justify-center  bg-graph-paper">
+        <main className="flex flex-1 items-center justify-center bg-graph-paper">
           <div className="relative flex h-full flex-1 flex-col items-center justify-center xl:flex-row-reverse xl:justify-start 2xl:ml-78 3xl:mr-78">
-            <div className="absolute w-full xl:w-1/2">
-              <BlurringObject className="mx-auto hidden lg:top-0 lg:block xl:right-0 2xl:right-auto" />
+            <div className="absolute -z-[1] w-full xl:w-1/2">
+              <BlurringObject
+                className="mx-auto hidden lg:top-0 lg:block xl:right-0 2xl:right-auto"
+                reverse
+              />
               <BlurringObject className="mx-auto lg:bottom-0 xl:right-0 2xl:right-auto" />
             </div>
             {/* <div className="absolute aspect-square h-auto w-full max-w-[100%] rounded-br-[10rem] rounded-tl-[10rem] bg-gradient-conic from-lime-500 via-orange-500 to-purple-500 opacity-10 blur-[70px] sm:max-w-2xl md:animate-spin-slow lg:-right-10 lg:-top-14 lg:max-w-4xl lg:rounded-full lg:opacity-5 4xl:right-0 " />
             <div className="lg-blur-0 absolute hidden aspect-square h-auto w-full max-w-[100%] rounded-br-[10rem] rounded-tl-[10rem] bg-gradient-conic from-purple-500 via-orange-500 to-lime-500 opacity-10 blur-[70px] sm:max-w-2xl md:block md:animate-spin-slow lg:-bottom-12 lg:-right-10 lg:max-w-4xl lg:rounded-full lg:opacity-5 4xl:right-0" /> */}
             <div className="relative hidden px-5 md:flex md:items-center md:justify-center xl:h-full xl:w-1/2 2xl:px-0">
-              <div className="relative flex h-40 w-40 items-center justify-center overflow-hidden rounded-full border border-primary-500/40 bg-primary-0 bg-opacity-[0.02] backdrop-blur-xs lg:h-80 lg:w-80 xl:h-96 xl:w-96 2xl:h-[32rem] 2xl:w-[32rem]">
+              <div className="relative flex h-40 w-40 items-center justify-center overflow-hidden rounded-full border border-primary-500/40 bg-primary-0 bg-opacity-[0.02] backdrop-blur-xs lg:h-64 lg:w-64 xl:h-96 xl:w-96 2xl:h-[32rem] 2xl:w-[32rem]">
                 <Image
                   src={favicon}
                   alt=""
@@ -30,7 +33,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="2x:py-0  relative flex w-full flex-col items-center justify-center gap-20 px-5 pb-21 pt-24 sm:items-center md:py-10 xl:w-1/2 xl:items-start 2xl:px-0">
+            <div className="2x:py-0  relative flex w-full flex-col items-center justify-center gap-20 px-5 pb-21 pt-24  sm:items-center md:py-10 md:pb-0 xl:w-1/2 xl:items-start 2xl:px-0">
               <div className="text-primary-0 xs:text-center xl:text-left">
                 <Image
                   src={favicon}
@@ -52,11 +55,14 @@ export default function Home() {
                 <p>{'// find my profile on Github:'}</p>
                 <p className="text-primary-0">
                   <span className="text-secondary-purple">const</span>{' '}
-                  <span className="text-accent-green">githubLink</span> ={' '}
+                  <span className="text-accent-green">
+                    {siteData.heroConst.key}
+                  </span>{' '}
+                  ={' '}
                   <span className="relative text-accent-salmon after:absolute after:inset-x-0 after:bottom-[2px] after:h-px after:bg-accent-salmon">
                     “
-                    <a href="https://github.com/example/url">
-                      https://github.com/example/url
+                    <a href={siteData.heroConst.value}>
+                      {siteData.heroConst.value}
                     </a>
                     ”
                   </span>
@@ -71,17 +77,31 @@ export default function Home() {
   )
 }
 
-function BlurringObject({ className }: { className?: string }) {
+function BlurringObject({
+  className,
+  reverse,
+}: {
+  className?: string
+  reverse?: boolean
+}) {
   return (
     <div
       className={cn(
         '',
-        'aspect-square animate-spin-slow blur-3xl xl:blur-[90px]',
+        'pointer-events-none aspect-square',
+        'blur-3xl lg:blur-[80px] xl:blur-[120px]',
         // 'bg-gradient-to-tr from-lime-400 via-yellow-400 to-purple-600',
-        'bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%',
-        'rounded-bl-[2rem] rounded-br-[12rem] rounded-tl-[12rem] rounded-tr-[2rem] xl:rounded-full',
+        'rounded-bl-[2rem] rounded-br-[12rem] rounded-tl-[12rem] rounded-tr-[2rem]',
         'h-auto w-full max-w-[100%] md:max-w-xl lg:max-w-2xl xl:max-w-3xl',
-        'opacity-10 lg:opacity-5 xl:opacity-[0.08]',
+        'opacity-30 md:opacity-20 lg:opacity-20',
+        {
+          // 'bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500':
+          //   !reverse,
+          // 'bg-gradient-to-r from-sky-500 via-emerald-500 to-indigo-500 ':
+          //   reverse,
+          'animate-spin-slow bg-mesh': !reverse,
+          'animate-spin-slow-reverse bg-mesh': reverse,
+        },
         className,
       )}
     />
