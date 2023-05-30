@@ -17,7 +17,7 @@ export const siteData = {
   role: 'Front-end developer',
   heroConst: {
     key: 'githubLink',
-    value: 'https://github.com/degliersa',
+    value: 'https://github.com/deglier',
   },
   links: [
     {
