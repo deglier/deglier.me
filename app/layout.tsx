@@ -28,10 +28,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={cn(
           fira.variable,
-          'relative h-full min-h-screen-adjusted overflow-y-auto overflow-x-hidden bg-primary-950 font-mono text-primary-100 scrollbar-thin scrollbar-thumb-slate-400 lg:max-h-screen-adjusted lg:overflow-y-hidden',
+          'relative grid h-full min-h-screen-adjusted overflow-y-auto overflow-x-hidden bg-primary-950 font-mono text-primary-100 scrollbar-thin scrollbar-thumb-slate-400 lg:max-h-screen-adjusted lg:overflow-y-hidden',
         )}
       >
-        <div className="flex h-full min-h-screen-adjusted p-4 lg:absolute lg:inset-0">
+        <div className="box-border flex overflow-x-hidden p-4 lg:absolute lg:inset-0 lg:overflow-y-hidden">
           <div className="flex w-full flex-1 flex-col divide-y divide-primary-500 rounded-lg border border-primary-500 bg-primary-800">
             <Header />
             {children}
