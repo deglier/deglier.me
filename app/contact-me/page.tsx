@@ -6,6 +6,10 @@ import ScrollbarColumn from '@/components/ui/ScrollbarColumn'
 import ContactForm from './components/ContactForm'
 import FormContent from './components/FormContent'
 
+export const metadata = {
+  title: 'Contato',
+}
+
 export default function ContactMe() {
   return (
     <>
