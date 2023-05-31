@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  /* width: 1rem; */
+  /* margin-right: 1.5rem; */
+  /* display: block; */
+  text-align: right;
+  @apply mr-10 h-full w-4 inline-block leading-relaxed; 
+}
+
+.line {
+  @apply grid grid-cols-[1rem_1fr] gap-x-10 whitespace-break-spaces relative;
+}

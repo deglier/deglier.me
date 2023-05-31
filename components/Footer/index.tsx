@@ -10,8 +10,9 @@ export default function Footer({ className }: { className?: string }) {
 
   return (
     <footer className={cn('flex h-12 divide-x divide-primary-500', className)}>
-      <span className="flex h-full w-full min-w-min items-center pl-5 xs:w-37">
-        find me in:
+      <span className="flex h-full w-full min-w-max flex-initial items-center pl-5 xs:w-auto xs:pr-4">
+        {/* find me in: */}
+        me encontre em:
       </span>
       {socialLinks.slice(0, socialLinks.length - 1).map(({ ...props }) => (
         <FooterLink key={props.title} {...props} />

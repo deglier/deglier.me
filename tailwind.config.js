@@ -19,6 +19,8 @@ module.exports = {
         primary: {
           0: '#ffffff',
           100: '#607B96',
+          200: '#465E77',
+          300: '#263B50',
           500: '#1E2D3D',
           800: '#011627',
           820: '#011221',
@@ -31,6 +33,7 @@ module.exports = {
         accent: {
           green: '#43D9AD',
           lilac: '#C98BDF',
+          purple: '#5565E8',
           salmon: '#E99287',
           orange: '#FEA55F',
         },
@@ -45,6 +48,7 @@ module.exports = {
         78: '19.5rem',
       },
       height: {
+        18: '4.5rem',
         'screen-adjusted': 'calc(var(--vh, 1vh) * 100)',
       },
       maxHeight: {
@@ -82,5 +86,9 @@ module.exports = {
       variants: {},
     },
   },
-  plugins: [require('tailwindcss-hocus'), require('tailwind-scrollbar')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwindcss-hocus'),
+    require('tailwind-scrollbar'),
+  ],
 }

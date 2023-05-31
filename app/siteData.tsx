@@ -21,22 +21,22 @@ export const siteData = {
   },
   links: [
     {
-      label: '_home',
+      label: '_inicio',
       path: '/',
       targetSegment: null,
     },
+    // {
+    //   label: '_about-me',
+    //   path: '/about-me',
+    //   targetSegment: 'about-me',
+    // },
+    // {
+    //   label: '_projects',
+    //   path: '/projects',
+    //   targetSegment: 'projects',
+    // },
     {
-      label: '_about-me',
-      path: '/about-me',
-      targetSegment: 'about-me',
-    },
-    {
-      label: '_projects',
-      path: '/projects',
-      targetSegment: 'projects',
-    },
-    {
-      label: '_contact-me',
+      label: '_contato',
       path: '/contact-me',
       targetSegment: 'contact-me',
     },

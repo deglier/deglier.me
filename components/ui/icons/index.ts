@@ -1,4 +1,4 @@
-export { default as CloseICon } from './Close'
+export { default as CloseIcon } from './Close'
 export { default as Css3Icon } from './Css3'
 export { default as FileIcon } from './File'
 export { default as FolderIcon } from './Folder'
