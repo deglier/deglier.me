@@ -14,10 +14,9 @@ interface FomActions {
 
 const initialState: FormState = {
   data: {
-    name: 'Jonathan Davis',
-    email: 'jonathan-davis@gmail.com',
-    message:
-      'Hey! Just checked your website and it looks awesome! Also, I checked your articled on Medium. Learned a few nice tips. Thanks!',
+    name: '',
+    email: '',
+    message: '',
   },
 }
 

@@ -1,26 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-
 import { useForm } from '@/hooks/useForm'
 
 export default function FormContent() {
   const { data } = useForm()
-  const [loading, setLoading] = useState(true)
-  const [code, setCode] = useState('')
-
-  const raw = `const button = document.querySelector('#sendBtn');
-  
-const message = {
-  name: "${data.name}",
-  email: "${data.email}",
-  message: "${data.message}",
-  date: "Thu 21 Apr"
-}
-
-button.addEventListener('click', () => {
-  form.send(message);
-})`
 
   return (
     <div>
